@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		var typed = 0;
+		function keyhandler()
+		{
+			typed = 1;
+		}
+		function changehandler()
+		{
+			if(document.getElementById('namebox').value == '')
+				alert('enter a name');
+		}
+		function submithandler()
+		{
+			if(typed) 
+			{ 
+				startGame(); 
+			} 
+		}
+	</script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0">
+    <script type="text/javascript" src="enchant.js"></script>
+	<link rel="shortcut icon" href="assets/mushroom.ico">
+    <script type="text/javascript" src="main.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+    <div id='hide'>
+    <form id='startform' onsubmit='submithandler(); return false;'>
+    	<p>Type something or it won't work</p>
+    	<input type='text' id='namebox' onkeydown='keyhandler()' onchange="changehandler()"'>
+    	<input type='submit' id='name' value='PLAY'>
+    </form>
+    </div>
+</head>
+<body>
+</body>
+</html>
+
